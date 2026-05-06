@@ -20,11 +20,15 @@ export function App() {
   }, []);
 
   return (
-    <main className="p-3">
-      <h1 className="p-2 font-bold font-mono text-3xl">
-        Currency Exchange Rates
-      </h1>
-      <RatesList rates={rates} />
+    <main>
+      <nav className="p-5 mb-6 bg-blue-950 text-white uppercase">
+        <h1 className="py-4 font-bold font-sans tracking-wider text-4xl text-center">
+          Currency Exchange Rates
+        </h1>
+      </nav>
+      <section className="w-4/5 mx-auto">
+        <RatesList rates={rates} />
+      </section>
     </main>
   );
 }
