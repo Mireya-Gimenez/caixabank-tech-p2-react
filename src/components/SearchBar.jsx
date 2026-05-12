@@ -21,7 +21,7 @@ export default function SearchBar() {
     <form onSubmit={handleSubmit} className="flex justify-center mb-6">
       <input
         type="text"
-        placeholder="Enter a currency"
+        placeholder="Enter a currency and press enter"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="border rounded p-2 w-92 text-center focus:outline-none focus:ring-3 focus:ring-blue-200"
