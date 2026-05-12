@@ -10,14 +10,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/* Para ocultar las flechas del input */
 input[type="number"] {
   -moz-appearance: textfield;
-}
-
-@layer base {
-  :root {
-  }
-
-  body {
-  }
 }

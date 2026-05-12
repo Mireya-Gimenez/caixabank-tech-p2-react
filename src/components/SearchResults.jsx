@@ -1,10 +1,13 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import RatesList from "./RatesList";
 
+// Componente que muestra la pagina de resultados según lo buscado en la barra
 export default function SearchResults({ rates }) {
+  // Obtenemos el parametro de la URL
   const { query } = useParams();
-  const navigate = useNavigate();
 
+  // Se convierte el objeto rates en un array y después se filtra
+  // para ver que coincida con la búsqueda
   const filteredRates = Object.fromEntries(
     Object.entries(rates).filter(([currency]) =>
       currency.includes(query.toUpperCase()),

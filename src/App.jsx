@@ -7,12 +7,12 @@ import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 
 export function App() {
-  // Variable con la Key de la API
+  // Variable para guardar la key de la API
   const API_KEY = "81610d2914fc4145a8fdce4ded83f8e5";
   const [rates, setRates] = useState({});
 
   useEffect(() => {
-    // Llamada a la API
+    // Llamamos a la API de manera asíncrona
     async function fetchRates() {
       const response = await fetch(
         `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`,

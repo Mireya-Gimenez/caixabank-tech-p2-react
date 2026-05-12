@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Componente para la barra de búsqueda, que navega a la página que muestra los resultados
 export default function SearchBar() {
+  // Estado para guardar el texto
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
+    // Evitamos recargar la página
     e.preventDefault();
 
     if (!search.trim()) return;
 
+    // Se navega a la página de resultados
     navigate(`/search/${search.toUpperCase()}`);
   }
 
