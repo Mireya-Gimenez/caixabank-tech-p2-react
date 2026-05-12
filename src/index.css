@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+html {
+  scrollbar-gutter: stable;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @layer base {
   :root {
   }

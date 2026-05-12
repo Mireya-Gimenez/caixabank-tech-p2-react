@@ -1,6 +1,10 @@
+import { Routes, Route } from "react-router-dom";
 import RatesList from "./components/RatesList";
+import CurrencyDetail from "./components/CurrencyDetail";
 import "./index.css";
 import { useEffect, useState } from "react";
+import SearchBar from "./components/SearchBar";
+import SearchResults from "./components/SearchResults";
 
 export function App() {
   // Variable con la Key de la API
@@ -27,7 +31,25 @@ export function App() {
         </h1>
       </nav>
       <section className="w-4/5 mx-auto">
-        <RatesList rates={rates} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar />
+                <RatesList rates={rates} />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/currency/:code"
+            element={<CurrencyDetail rates={rates} />}
+          />
+          <Route
+            path="/search/:query"
+            element={<SearchResults rates={rates} />}
+          />
+        </Routes>
       </section>
     </main>
   );
